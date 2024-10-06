@@ -2,7 +2,7 @@ import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { NodejsFunction } from 'aws-cdk-lib/aws-lambda-nodejs';
 import { Architecture, Runtime } from 'aws-cdk-lib/aws-lambda';
-import { LambdaFunctionProps } from './TSLambdaFunction.type';
+import { LambdaFunctionProps } from '../../types/TSLambdaFunction.type';
 
 export class TSLambdaFunction extends Construct {
   public readonly tsLambdaFunction: NodejsFunction;
@@ -16,6 +16,7 @@ export class TSLambdaFunction extends Construct {
       entryPath,
       handlerName = 'handler',
       tsConfigPath,
+      functionName = `${serviceName}-${id}-${stage}`,
     } = props;
 
     this.tsLambdaFunction = new NodejsFunction(
@@ -31,6 +32,7 @@ export class TSLambdaFunction extends Construct {
           minify: true,
           tsconfig: tsConfigPath,
         },
+        functionName,
       }
     );
   }

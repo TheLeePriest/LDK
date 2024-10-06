@@ -7,7 +7,7 @@ import {
   LogLevel,
 } from 'aws-cdk-lib/aws-stepfunctions';
 import { LogGroup } from 'aws-cdk-lib/aws-logs';
-import { ExpressStepFunctionProps } from './ExpressStepFunction.type';
+import { ExpressStepFunctionProps } from '../../types/ExpressStepFunction.type';
 
 export class ExpressStepFunction extends Construct {
   public readonly stateMachine: StateMachine;

@@ -1,7 +1,7 @@
 import { Stack } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import { ApiKey, RestApi, UsagePlan } from 'aws-cdk-lib/aws-apigateway';
-import { ApiGatewayProps } from './APIGateway.type';
+import { ApiGatewayProps } from '../../types/APIGateway.type';
 
 export class APIGateway extends Construct {
   public readonly restAPI: RestApi;

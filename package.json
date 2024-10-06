@@ -1,9 +1,9 @@
 {
   "name": "the-ldk",
-  "version": "0.0.0",
+  "version": "0.0.3",
   "description": "Welcome to the LDK!",
-  "main": "dist/src/constructs/exports/index.js",
-  "types": "dist/src/constructs/exports/index.d.ts",
+  "main": "dist/exports/index.js",
+  "types": "dist/exports/index.d.ts",
   "scripts": {
     "build": "tsc",
     "cdk": "cdk",
