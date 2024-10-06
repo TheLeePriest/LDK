@@ -1,0 +1,13 @@
+{
+  "app": "npx ts-node --prefer-ts-exts src/examples/App.ts",
+  "context": {
+    "@aws-cdk/core:newStyleStackSynthesis": true,
+    "aws-cdk:enableDiffNoFail": true
+  },
+  "output": "cdk.out",
+  "requireApproval": "never",
+  "watch": {
+    "include": ["**/*.ts"],
+    "exclude": ["cdk.out", "node_modules"]
+  }
+}

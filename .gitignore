@@ -1,0 +1,10 @@
+node_modules
+dist
+.DS_Store
+.env
+.cdk.staging
+cdk.out
+**/cdk.context.json
+.idea/*
+.vscode/*
+!.vscode/extensions.json
