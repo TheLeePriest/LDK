@@ -1,6 +1,6 @@
 import { z as zod } from 'zod';
 
-export const LambdaFunctionProps = zod.object({
+export const LambdaFunctionPropsSchema = zod.object({
   serviceName: zod.string(),
   stage: zod.string(),
   entryPath: zod.string(),
@@ -8,3 +8,5 @@ export const LambdaFunctionProps = zod.object({
   tsConfigPath: zod.string(),
   functionName: zod.string().optional(),
 });
+
+export type LambdaFunctionProps = zod.infer<typeof LambdaFunctionPropsSchema>;
