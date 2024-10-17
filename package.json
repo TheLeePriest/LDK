@@ -1,6 +1,6 @@
 {
   "name": "the-ldk",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "Welcome to the LDK!",
   "main": "dist/exports/index.js",
   "types": "dist/exports/index.d.ts",
@@ -22,7 +22,17 @@
   "keywords": [
     "CDK",
     "AWS",
-    "Serverless"
+    "Serverless",
+    "Infrastructure",
+    "Cloud",
+    "Development",
+    "Kit",
+    "LDK",
+    "EventBridge",
+    "Step Functions",
+    "API Gateway",
+    "Lambda",
+    "API"
   ],
   "author": "Lee Priest",
   "license": "UNLICENSED",
