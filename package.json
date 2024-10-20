@@ -1,7 +1,7 @@
 {
   "name": "the-ldk",
-  "version": "0.0.6",
-  "description": "Welcome to the LDK!",
+  "version": "0.0.8",
+  "description": "Welcome to the LDK! A collection of custom AWS CDK constructs to help you build serverless applications faster.",
   "main": "dist/exports/index.js",
   "types": "dist/exports/index.d.ts",
   "scripts": {

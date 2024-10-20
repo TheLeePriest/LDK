@@ -17,6 +17,7 @@ export class TSLambdaFunction extends Construct {
       handlerName = 'handler',
       tsConfigPath,
       functionName = `${serviceName}-${id}-${stage}`,
+      customOptions = {},
     } = props;
 
     this.tsLambdaFunction = new NodejsFunction(
@@ -33,6 +34,7 @@ export class TSLambdaFunction extends Construct {
           tsconfig: tsConfigPath,
         },
         functionName,
+        ...customOptions,
       }
     );
   }
