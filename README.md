@@ -81,3 +81,20 @@ This is a custom AWS Step Function construct, which sets up an AWS Step Function
 - `stage`: Deployment stage.
 - `timeout`: Optional timeout for the state machine.
 - `definition`: Definition of the state machine.
+
+## IAMUser
+
+This is a custom IAM User construct, which sets up an IAM user with optional access keys and policy statements.
+
+### Key Parts:
+
+- **User**: Creates an IAM user.
+- **CfnAccessKey**: Optionally generates access keys for the IAM user.
+
+### Key Properties:
+
+- `stage`: Deployment stage.
+- `userName`: Optional name of the IAM user.
+- `generateAccessKeys`: Optional flag to generate access keys for the IAM user.
+- `customUserOptions`: Optional object for additional user configuration.
+- `policyStatement`: Optional policy statement to attach to the IAM user.
