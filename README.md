@@ -14,6 +14,7 @@ More constructs will be added over time.
 - [LDKEventBus](#ldkeventbus)
 - [TSLambdaFunction](#tslambdafunction)
 - [ExpressStepFunction](#expressstepfunction)
+- [IAMUser](#iamuser)
 
 ## APIGateway
 
