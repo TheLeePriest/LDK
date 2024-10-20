@@ -64,6 +64,7 @@ This is a custom TSLambdaFunction construct, which sets up a Node.js Lambda func
 - `handlerName`: Optional handler name.
 - `tsConfigPath`: Path to the TypeScript configuration file.
 - `functionName`: Optional function name.
+- `customOptions`: Optional object that allows any props that are passable vai the NodejsFunction construct
 
 ## ExpressStepFunction
 
