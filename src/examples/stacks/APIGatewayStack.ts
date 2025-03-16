@@ -11,7 +11,7 @@ export class ExampleAPIGatewayStack extends NestedStack {
 
     const apiGateway = new APIGateway(this, id, {
       serviceName: 'ldk-example',
-      stage: 'dev',
+      env: 'dev',
     });
 
     this.restAPI = apiGateway.restAPI;
