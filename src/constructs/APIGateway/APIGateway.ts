@@ -21,7 +21,6 @@ export class APIGateway extends Construct {
 
     const {
       serviceName,
-      stage,
       rateLimit = 100000,
       burstLimit = 1000,
       restApiProps,
@@ -36,10 +35,11 @@ export class APIGateway extends Construct {
       loggingLevel = 'INFO',
       dataTraceEnabled = false,
       authorizer,
+      env,
     } = props;
 
     const defaultDeployOptions = {
-      stageName: stage,
+      stageName: env,
       tracingEnabled: enableTracing,
       loggingLevel: loggingLevel.toUpperCase() as any,
       dataTraceEnabled: dataTraceEnabled,
@@ -51,7 +51,7 @@ export class APIGateway extends Construct {
       authorizationType: authorizer ? AuthorizationType.CUSTOM : undefined,
     };
 
-    this.restAPI = new RestApi(this, `${serviceName}-restAPI-${stage}`, {
+    this.restAPI = new RestApi(this, `${serviceName}-restAPI-${env}`, {
       ...restApiProps,
       deployOptions: {
         ...defaultDeployOptions,
@@ -63,14 +63,14 @@ export class APIGateway extends Construct {
       },
     });
 
-    this.apiKey = new ApiKey(this, `${serviceName}-apiKey-${stage}`, {
-      apiKeyName: `${serviceName}-apiKey-${stage}`,
+    this.apiKey = new ApiKey(this, `${serviceName}-apiKey-${env}`, {
+      apiKeyName: `${serviceName}-apiKey-${env}`,
       generateDistinctId: true,
       stages: [this.restAPI.deploymentStage],
     });
 
-    this.usagePlan = new UsagePlan(this, `${serviceName}-usagePlan-${stage}`, {
-      name: `${serviceName}-${stage}`,
+    this.usagePlan = new UsagePlan(this, `${serviceName}-usagePlan-${env}`, {
+      name: `${serviceName}-${env}`,
       throttle: {
         rateLimit,
         burstLimit,
@@ -103,11 +103,11 @@ export class APIGateway extends Construct {
 
       const customDomain = DomainName.fromDomainNameAttributes(
         this,
-        `${serviceName}-customDomain-${stage}`,
+        `${serviceName}-customDomain-${env}`,
         domainProps
       );
 
-      new BasePathMapping(this, `${serviceName}-basePathMapping-${stage}`, {
+      new BasePathMapping(this, `${serviceName}-basePathMapping-${env}`, {
         domainName: customDomain,
         restApi: this.restAPI,
         stage: this.restAPI.deploymentStage,
