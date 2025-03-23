@@ -1,4 +1,4 @@
-import { Stack, Duration } from 'aws-cdk-lib';
+import { Duration } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import {
   StateMachine,
@@ -12,7 +12,7 @@ import { ExpressStepFunctionProps } from '../../types/ExpressStepFunction.type';
 export class ExpressStepFunction extends Construct {
   public readonly stateMachine: StateMachine;
 
-  constructor(scope: Stack, id: string, props: ExpressStepFunctionProps) {
+  constructor(scope: Construct, id: string, props: ExpressStepFunctionProps) {
     super(scope, id);
 
     const { serviceName, stage, definition, timeout = 5 } = props;
