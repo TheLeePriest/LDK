@@ -5,17 +5,24 @@ import {
   DefinitionBody,
   StateMachineType,
   LogLevel,
+  QueryLanguage,
 } from 'aws-cdk-lib/aws-stepfunctions';
 import { LogGroup } from 'aws-cdk-lib/aws-logs';
 import { ExpressStepFunctionProps } from '../../types/ExpressStepFunction.type';
-
 export class ExpressStepFunction extends Construct {
   public readonly stateMachine: StateMachine;
 
   constructor(scope: Construct, id: string, props: ExpressStepFunctionProps) {
     super(scope, id);
 
-    const { serviceName, stage, definition, timeout = 5 } = props;
+    const {
+      serviceName,
+      stage,
+      definition,
+      timeout = 5,
+      queryLanguage = QueryLanguage.JSON_PATH,
+      customOverrides = {},
+    } = props;
 
     const logGroup = new LogGroup(
       this,
@@ -30,11 +37,13 @@ export class ExpressStepFunction extends Construct {
         timeout: Duration.minutes(timeout),
         stateMachineType: StateMachineType.EXPRESS,
         stateMachineName: `${serviceName}-express-stepfn-${stage}`,
+        queryLanguage,
         logs: {
           destination: logGroup,
           level: LogLevel.ALL,
           includeExecutionData: true,
         },
+        ...customOverrides,
       }
     );
   }
