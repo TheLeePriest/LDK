@@ -1,6 +1,6 @@
 {
   "name": "the-ldk",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Welcome to the LDK! A collection of custom AWS CDK constructs to help you build serverless applications faster.",
   "main": "dist/exports/index.js",
   "types": "dist/exports/index.d.ts",
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/TheLeePriest/LDK.git"
   },
   "engines": {
-    "node": ">=18.19.1"
+    "node": ">=22.15.0"
   },
   "keywords": [
     "CDK",
@@ -41,26 +41,26 @@
   },
   "homepage": "https://github.com/TheLeePriest/LDK#readme",
   "dependencies": {
-    "esbuild": "^0.25.3",
-    "zod": "^3.24.3"
+    "esbuild": "^0.25.4",
+    "zod": "^3.24.4"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",
-    "@types/node": "^22.15.3",
-    "@typescript-eslint/eslint-plugin": "^8.31.1",
-    "@typescript-eslint/parser": "^8.31.1",
-    "aws-cdk-lib": "^2.194.0",
+    "@types/node": "^22.15.17",
+    "@typescript-eslint/eslint-plugin": "^8.32.1",
+    "@typescript-eslint/parser": "^8.32.1",
+    "aws-cdk-lib": "^2.195.0",
     "constructs": "^10.4.2",
     "eslint": "^9.26.0",
-    "eslint-config-prettier": "^10.1.2",
-    "eslint-plugin-prettier": "^5.3.1",
+    "eslint-config-prettier": "^10.1.5",
+    "eslint-plugin-prettier": "^5.4.0",
     "jest": "^29.7.0",
     "prettier": "^3.5.3",
     "ts-node": "^10.9.2",
     "typescript": "^5.8.3"
   },
   "peerDependencies": {
-    "aws-cdk-lib": "^2.194.0",
+    "aws-cdk-lib": "^2.195.0",
     "constructs": "^10.4.2"
   }
 }

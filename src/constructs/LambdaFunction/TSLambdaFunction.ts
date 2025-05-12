@@ -25,7 +25,7 @@ export class TSLambdaFunction extends Construct {
       `${serviceName}-${id}-${stage}`,
       {
         entry: entryPath,
-        runtime: Runtime.NODEJS_18_X,
+        runtime: Runtime.NODEJS_20_X,
         architecture: Architecture.ARM_64,
         handler: handlerName,
         bundling: {
