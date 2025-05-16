@@ -1,4 +1,4 @@
-import { Duration } from 'aws-cdk-lib';
+import { Duration, RemovalPolicy } from 'aws-cdk-lib';
 import { Construct } from 'constructs';
 import {
   StateMachine,
@@ -26,7 +26,12 @@ export class ExpressStepFunction extends Construct {
 
     const logGroup = new LogGroup(
       this,
-      `${serviceName}-express-stepfn-logs-${stage}`
+      `${serviceName}-express-stepfn-logs-${stage}`,
+      {
+        logGroupName: `/aws/vendedlogs/states/${serviceName}-express-stepfn-${stage}`,
+        retention: 7,
+        removalPolicy: RemovalPolicy.DESTROY,
+      }
     );
 
     this.stateMachine = new StateMachine(
